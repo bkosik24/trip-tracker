@@ -1,0 +1,15 @@
+.container
+  .row-fluid
+    .col-md-10
+      h3() List of all Trips
+    .col-md-2.pull-right
+      = link_to("New Trip", new_trip_path)
+  .row-fluid
+    table.table.table-responsive
+      tr()
+        th() Name
+        th() Description
+        th() Actions
+      tbody
+        = render @trips
+          

@@ -1,0 +1,28 @@
+doctype html
+html
+  head
+    title TripTracker
+    meta content="width=device-width, initial-scale=1.0" name="viewport"
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+
+    = csrf_meta_tags
+  body
+    .wrapper
+      header
+        .navbar
+          .navbar-inner
+            .container
+              ul.nav.nav-tabs
+                li
+                  =link_to("Home", root_path)
+                li.dropdown
+                  a.dropdown-toggle(data-toggle="dropdown" data-target="#")
+                    | Trips
+                    b.caret
+                  ul.dropdown-menu(role="menu" aria-labelledby="dLabel")
+                    li()
+                      = link_to("New Trip", new_trip_path)
+      
+      section.main
+        = yield  
